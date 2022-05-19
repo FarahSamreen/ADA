@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<time.h>
+int main()
+{
+    double x;
+    clock_t t;
+    t=clock();
+    int i,c,j;
+    int arr[6];
+    int temp;
+    for(i=0;i<6;i++){
+    printf("Enter elements of the array:");
+    scanf("%d",&arr[i]);
+    }
+    i=0;
+    j=1;
+    for(i=0;i<6;i++){
+        c=0;
+        for(j=1;j<6;j++){
+         
+        if(arr[j]>arr[c]){
+            temp=arr[c];
+            arr[c]=arr[j];
+            arr[j]=temp;
+        }
+        c=j;
+    }
+    }
+    for(i=0;i<6;i++){
+        printf("%d ",arr[i]);
+    }
+    t=clock()-t;
+    x=(double)t/CLOCKS_PER_SEC;
+    printf("Time: %fl",x);
+    return 0;
+}
